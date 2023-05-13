@@ -1,0 +1,181 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.btns{
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+main .boxes{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+main .boxes .card{
+  margin-right: 30px;
+}
+
+
+main .boxes .card img{
+  height: 300px;
+}
+
+
+main .boxes .card ul li{
+  font-weight: 700;
+}
+
+
+main .boxes .card ul li span{
+  font-weight: 500;
+  padding-left: 5px;
+  font-family: 'Wix Madefor Display', sans-serif;
+}
+
+
+main .boxes .card #btns{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+main .pagination{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  position: relative;
+}
+
+
+main .pagination nav{
+  position: fixed;
+  bottom: 0;
+}
+
+
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* height: 100%; */
+}
+.container h1{
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-family: 'Wix Madefor Display', sans-serif;
+}
+
+input{
+  border: 1px solid #bdbdbd !important;
+}
+textarea{
+  border: 1px solid #bdbdbd !important;
+}
+.form-outline span{
+  background: white;
+  padding: 0px 5px 0px 5px;
+}
+form label{
+  font-weight: 700 !important;
+  font-family: 'Wix Madefor Display', sans-serif !important;
+}
+
+section .inf{
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section .inf .card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  padding: 25px;
+  border: 2px solid #dfe7f6;
+  padding: 25px;
+}
+section .inf .card .radius{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  border: 2px solid;
+  border-radius: 50%;
+  padding: 15px;
+  background: none;
+}
+section .inf .card .radius img{
+  width: 180px;
+}
+section .inf .card .card-body h4{
+  font-weight: 700 !important;
+  font-family: 'Wix Madefor Display', sans-serif !important;
+  text-transform: uppercase;
+}
+section .inf .card .card-body h4 span{
+  padding-left: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500 !important;
+  font-family: 'Wix Madefor Display', sans-serif !important;
+  text-transform: capitalize;
+  transition: 500ms;
+}
+section .inf .card .card-body h4 span:hover{
+  color: #2c58a0;
+}
+
+section #exampleModal .modal-body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 400px;
+}
+main #exampleModal2 .modal-body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 400px;
+}
+
+
+.positionOninput{
+  top: -17px !important;
+}
+
+.alerts{
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+

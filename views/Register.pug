@@ -1,0 +1,57 @@
+extends layout
+
+block content
+  // ==== ALERTS START ==== //
+  .alerts
+    if err
+      if err.errors
+        .alert.alert-danger.col-3(role='alert')
+          span(style="margin-left:7px;") Пожалуйста, заполните все поля
+      else if err.keyPattern.Login
+        .alert.alert-danger.col-3(role='alert')
+          b(style="text-transform: uppercase;")=err.keyValue.Login 
+          span(style="margin-left:7px;") Такой логин существует
+      else
+        .alert.alert-danger.col-3(role='alert')
+          b(style="text-transform: uppercase;") ERORR
+  // ==== ALERTS END ==== //
+  
+  // ==== CONSTAINER START ==== //
+  .container
+    h1 Регистрация
+    form.col-4(action="/Reg" method="post")
+      // Email input
+      .form-outline.mb-4
+        input#form1Example1.form-control.Regname(type='text' name="username" required)
+        label.form-label(for='form1Example1')
+          span Ф.И.О
+      .form-outline.mb-4
+        input#form1Example2.form-control.RegMail(type='email' name="Email")
+        label.form-label(for='form1Example2')
+          span Почта
+      .form-outline.mb-4
+        input#form1Example3.form-control.RegLogin(type='text' name="Login" required)
+        label.form-label(for='form1Example3')
+          span Логин
+      // Password input
+      .form-outline.mb-4
+        input#form1Example4.form-control.RegPassword(type='password' name="password" required)
+        label.form-label(for='form1Example4')
+          span Парол
+      // 2 column grid layout for inline styling
+      .row.mb-4
+        label.form-label Пол:
+        .col.d-flex(style="justify-content: space-evenly;")
+            input#option1.btn-check.RegGen(type='radio' name='gander' value="Мужчина" autocomplete='off' checked='')
+            label.btn.btn-secondary(for='option1') Мужчина
+            input#option2.btn-check.RegGen(type='radio' name='gander' value="Женщина" autocomplete='off')
+            label.btn.btn-secondary(for='option2') Женщина
+      // Submit button
+      button.btn.btn-primary.btn-block.RegBtn(type='submit') Зарегистрироваться
+      br
+      .text-center
+          p
+            | Вы зарегистрировались? 
+            a(href='/Log') Входить
+  // ==== CONSTAINER END ==== //
+

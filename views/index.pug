@@ -1,0 +1,75 @@
+extends layout
+
+block content
+  // ==== HEADER START ==== //
+  header
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      // Container wrapper
+      .container-fluid
+        // Toggle button
+        button.navbar-toggler(type='button' data-mdb-toggle='collapse' data-mdb-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+          i.fas.fa-bars
+        // Collapsible wrapper
+        #navbarSupportedContent.collapse.navbar-collapse
+          // Navbar brand
+          a.navbar-brand.mt-2.mt-lg-0(href='/')
+            img(src='https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp' height='15' alt='MDB Logo' loading='lazy')
+          // Left links
+          ul.navbar-nav.me-auto.mb-2.mb-lg-0
+          // Left links
+          // Collapsible wrapper
+          // Right elements
+          if users
+            .dropdown
+                a#navbarDropdownMenuAvatar.dropdown-toggle.d-flex.align-items-center.hidden-arrow(href='#' role='button' data-mdb-toggle='dropdown' aria-expanded='false')
+                  img.rounded-circle(src=users.Avatar height='25' alt='' loading='lazy')
+                ul.dropdown-menu.dropdown-menu-end(style="margin-left:-70px;" aria-labelledby='navbarDropdownMenuAvatar')
+                  li
+                    a.dropdown-item(href='/users/profile') Мой профил
+                  li
+                    a.dropdown-item(href='/logout') Выйти
+          else
+            .d-flex.align-items-center.col-2.btns
+              a.btn.btn-outline-primary.mr-2(href="/Reg" data-mdb-ripple-color='dark') РЕГИСТРАЦИЯ
+              a.btn.btn-success(href="/Log" data-mdb-ripple-color='dark') ВОЙТИ
+  // ==== HEADER END ==== //
+
+  // ==== MAIN START ==== //
+  main
+    .boxes.col-10
+      each products, i in Products
+          if i == 20
+            - break
+          else 
+            .card.mt-5.shadow-4-strong(style='width: 18rem;')
+              if products.Image != null
+                img.card-img-top(src=products.Image alt='...')
+              else
+
+              .card-body
+                h5.card-title=products.Subject
+                p.card-text=products.Description
+              ul.list-group.list-group-flush
+                li.list-group-item
+                li.list-group-item Автор:
+                  span=products.Author
+                li.list-group-item.mb-2 Дата добавления:
+                  span=products.DateOfAddition
+   
+    .pagination.col-12.mt-5 
+      nav(aria-label='Page navigation example')
+        ul.pagination
+          li.page-item
+            a.page-link(href='#' aria-label='Previous')
+              span(aria-hidden='true') «
+          - let leng = Products.length / 20
+          - leng = Math.ceil(leng)
+          - let skip = 0;
+          - for (let i = 0; i < leng; i++)
+            li.page-item
+              a.page-link(href=`/skip/${skip}`)=i
+            - skip = skip + 20;
+          li.page-item
+            a.page-link(href='#' aria-label='Next')
+              span(aria-hidden='true') »
+  // ==== MAIN END ==== //
